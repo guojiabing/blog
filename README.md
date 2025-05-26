@@ -161,6 +161,8 @@ events {
 http {
     include       /etc/nginx/mime.types;
     default_type  application/octet-stream;
+    
+    client_max_body_size 20M; #上传文件大小限制
 
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
@@ -177,6 +179,7 @@ http {
 
     include /etc/nginx/conf.d/*.conf;
 }
+
 
 ```
 
